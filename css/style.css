@@ -1,0 +1,328 @@
+/*
+------------------------------------------------
+RESET
+------------------------------------------------
+*/
+
+html, body,
+h1, h2, h3, h4, h5, h6,
+a, p, span,
+em, small, strong,
+sub, sup,
+mark, del, ins, strike,
+abbr, dfn,
+blockquote, q, cite,
+code, pre,
+ol, ul, li, dl, dt, dd,
+div, section, article,
+main, aside, nav,
+header, hgroup, footer,
+img, figure, figcaption,
+address, time,
+audio, video,
+canvas, iframe,
+details, summary,
+fieldset, form, label, legend,
+table, caption,
+tbody, tfoot, thead,
+tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+
+/*
+------------------------------------------------
+COMMON
+------------------------------------------------
+*/
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700|Noto+Serif+JP:400,700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  font-family: 'Merriweather Sans' sans-serif 'Noto Serif JP' serif, ;
+  color: #222;
+  font-size: 62.5%;
+}
+
+body{
+  font-size:1.6rem;/* 16px*/
+}
+
+.padding{
+  padding-bottom: 2rem;
+}
+/*
+------------------------------------------------
+nav
+------------------------------------------------
+*/
+
+.navbar {
+  padding: .8rem;
+}
+
+.navbar-nav li {
+  padding-right: 30px;
+}
+
+.nav-link {
+  font-size: 1.5em !important;
+}
+
+.logo {
+ font-size: 1.8rem !important;
+ padding-left:2rem
+ /* font-weight: bold; */
+}
+
+/* carousel */
+
+.carousel-inner img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-caption h1 {
+  font-size: 250%;
+  line-height: 130%;
+  text-shadow: 1px 1px 15px #000;
+}
+
+.carousel-caption h3 {
+  font-size: 200%;
+  text-shadow: 1px 1px 10px #000;
+  padding-bottom: 1rem;
+}
+
+.btn-default {
+  display: inline-block;
+  margin-left: 2rem;
+  border: 1px solid #000;
+}
+
+.btn-default:hover{
+  border: 1px solid #FF0149;
+}
+
+.cd-fixed-bg {
+  min-height: 100%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.cd-fixed-bg.cd-bg-1 {
+background-image: url("../img/mac.png");
+}
+
+.cd-scrolling-bg {
+  min-height: 100%;
+}
+
+/* phase */
+.phase {
+background-color: bisque;
+}
+
+.phase-wrap {
+  margin: 5rem auto 0 auto;
+}
+
+.phase-sentence {
+  margin-bottom: 5rem;
+  font-size: 120%;
+}
+
+
+/* theme  */
+.section-title {
+  margin: 2rem auto;
+}
+.themes {
+ padding: 0 !important;
+}
+
+.contents {
+  /* padding: 25rem auto; */
+  /* height:300px; */
+  position: relative;
+}
+.content {
+  position: absolute;
+  top:15px;
+  left: 15px;
+}
+
+/* .learning {
+  background-image: url(../img/lesson.png);
+  background-size: auto; */
+}
+
+.practice {
+  background-image: url(../img/sp.png);
+  background-size: cover;
+}
+.event {
+  background-image: url(../img/event.png);
+  background-size: cover;
+}
+
+footer {
+  background-color: #FF0149;
+}
+/*---Media Queries --*/
+@media (max-width: 992px) {
+  .social a {
+    font-size: 4em;
+    padding: 2rem;
+  }
+  }
+@media (max-width: 768px) {
+  .carousel-caption {
+    top: 45%;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 280%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 180%;
+    padding-bottom: .2rem;
+  }
+
+  .carousel-caption .btn {
+     font-size: 95%;
+     padding: 8px 14px
+  }
+
+  .display-4{
+    font-size: 200%;
+  }
+  .social a {
+    font-size: 2.5em;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    top: 40%;
+  }
+  
+  .carousel-caption h1 {
+    font-size: 120%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 100%;
+  }
+
+ .btn-default {
+   display: none;
+ }
+
+  .carousel-caption .btn {
+     font-size: 90%;
+     padding: 4px 8px
+  }
+
+  .carousel-indicators {
+    display: none;
+  }
+  .display-4{
+    font-size: 160%;
+  }
+  .social a {
+    font-size: 2em;
+    padding: .7em;
+  }
+}
+/*---Firefox Bug Fix --*/
+.carousel-item {
+  transition: -webkit-transform 0.5s ease;
+  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, -webkit-transform 0.5s ease;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+/*--- Fixed Background Image --*/
+figure {
+  position: relative;
+  width: 100%;
+  height: 60%;
+  margin: 0!important;
+}
+.fixed-wrap {
+  clip: rect(0, auto, auto, 0);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+#fixed {
+  background-image: url('img/mac.png');
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  will-change: transform;
+}
+/*--- Bootstrap Padding Fix --*/
+[class*="col-"] {
+    padding: 1rem;
+}
+
+
+
+
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default in Bootstrap
+
+Small (sm) devices (landscape phones, 576px and up)
+@media (min-width: 576px) { ... }
+
+Medium (md) devices (tablets, 768px and up)
+@media (min-width: 768px) { ... }
+
+Large (lg) devices (desktops, 992px and up)
+@media (min-width: 992px) { ... }
+
+Extra (xl) large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) { ... }
+*/
+
+
+
+
+
+
+
+
